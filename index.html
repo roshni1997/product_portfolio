@@ -220,6 +220,24 @@ table.tbl th{font-size:10.5px;text-transform:uppercase;letter-spacing:.4px;color
   .view{min-height:calc(100vh - 140px)}.view iframe{min-height:900px}.foot{position:sticky;bottom:0}
 }
 </style>
+<!-- GoatCounter visitor analytics: dashboard at https://roshni1997.goatcounter.com
+     Counts the landing page as "/" and each project page as e.g. "/CXB/1".
+     Add ?ref=name to a shared link (before any #) to see which link a visitor used. -->
+<script>
+window.goatcounter = { no_onload: true };
+let gcLast = null;
+function gcHit() {
+  const gc = window.goatcounter;
+  if (!gc || !gc.count) return;
+  const path = location.hash.replace(/^#/, "") || "/";
+  if (path === gcLast) return;
+  const first = gcLast === null;
+  gcLast = path;
+  gc.count({ path, referrer: first ? (new URLSearchParams(location.search).get("ref") || document.referrer) : "" });
+}
+window.addEventListener("hashchange", gcHit);
+</script>
+<script data-goatcounter="https://roshni1997.goatcounter.com/count" async src="//gc.zgo.at/count.js" onload="gcHit()"></script>
 </head>
 <body>
 <div id="home"></div>
